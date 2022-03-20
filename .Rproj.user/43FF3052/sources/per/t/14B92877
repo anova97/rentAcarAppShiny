@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1647801360948.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3210891094",
+    "id" : "14B92877",
+    "lastKnownWriteTime" : 1647801286,
+    "last_content_update" : 1647801286,
+    "path" : "~/Documents/GitHub/rentAcarApp/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "cursorPosition" : "1935,21",
+        "scrollLine" : "1927"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

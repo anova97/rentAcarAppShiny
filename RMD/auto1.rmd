@@ -1,0 +1,193 @@
+---
+output: pdf_document
+font-family: "Arial"
+fontsize: 12pt
+params:
+  DataZawUmowy: NA
+  NumerUmowy: NA
+  n: NA
+  NazwaFir: ""
+  NipFir: ""
+  ULFir: ""
+  KodFir: ""
+  MiastoFir: ""
+  RegonFir: ""
+  Imie: NA
+  Nazwisko: NA
+  Telefon: NA
+  Kod: NA
+  Miasto: NA
+  Ulica: NA
+  Dowod: NA
+  Pesel: NA
+  KatPraw: NA
+  NumPraw: NA
+  Marka: NA
+  Model: NA
+  StanLicznika: NA
+  StanPaliwa: NA
+  Zewnatrz: NA
+  Wewnatrz: NA
+  Vin: NA
+  NumRej: NA
+  DowodRej: NA
+  Paliwo: NA
+  DataOd: NA
+  GodzinaOdDod: NA
+  GodzinaDoDod: NA
+  DataDo: NA
+  Zagranica: NA
+  Przekazano: NA
+  Cena1: NA
+  JednCzasu: NA
+  Cena2: NA
+  Limit1: NA
+  Limit2: NA
+  Kaucja: NA
+
+   
+---
+
+\center __UMOWA  NAJMU  SAMOCHODU NR__ **`r params$NumerUmowy`** \center
+
+***
+\raggedright
+Umowa zawarta w Łodzi w dniu **`r params$DataZawUmowy`** pomiędzy
+firma 1 ul. Krakowska 1, 99-098 Łódź Nip: 6001003030 zwany w dalszej części umowy __WYNAJMUJĄCYM__, a:
+
+```{r, echo=FALSE, warning=FALSE, tidy=TRUE}
+library(kableExtra)
+library(knitr)
+d<-data.frame(nazwa=1, wartosc=2, nazwa3=3, wartosc4=4)
+d[1,1]="imię"
+d[2,1]="nazwisko"
+d[3,1]="telefon"
+d[4,1]="nr dow. os."
+d[5,1]="nr pesel"
+d[6,1]="kat. prawa jazdy"
+d[7,1]="nr prawa jazdy"
+
+d[1,2]=params$Imie
+d[2,2]=params$Nazwisko
+d[3,2]=params$Telefon
+d[4,2]=params$Dowod
+d[5,2]=params$Pesel
+d[6,2]=params$NumPraw
+d[7,2]=params$KatPraw
+
+d[1,3]="Firma"
+d[2,3]="NIP"
+d[3,3]="Ulica"
+d[4,3]="Kod"
+d[5,3]="Miejscowosc"
+d[6,3]="REGON"
+d[7,3]=" "
+
+
+d[1,4]=params$NazwaFir
+d[2,4]=params$NipFir
+d[3,4]=params$ULFir
+d[4,4]=params$KodFir
+d[5,4]=params$MiastoFir
+d[6,4]=params$RegonFir
+d[7,4]=" "
+
+
+
+colnames(d)<-NULL
+kable(d, format = "latex")
+```
+
+1. Przedmiotem najmu jest samochód:
+```{r, echo=FALSE, warning=FALSE, tidy=TRUE}
+library(kableExtra)
+library(knitr)
+a<-data.frame(nazwa=1, wartosc=2)
+a[1,1]="Marka"
+a[2,1]="Model"
+a[3,1]="Vin"
+a[4,1]="Numer rejestracyjny"
+a[5,1]="Dowód rejestracyjny nr"
+a[6,1]="Stan licznika"
+a[7,1]="Stan paliwa"
+a[8,1]="Rodzaj paliwa"
+a[9,1]="Stan na zewnątrz"
+a[10,1]="Stan w środku"
+
+a[1,2]=params$Marka
+a[2,2]=params$Model
+a[3,2]=params$Vin
+a[4,2]=params$NumRej
+a[5,2]=params$DowodRej
+a[6,2]=params$StanLicznika
+a[7,2]=params$StanPaliwa
+a[8,2]=params$Paliwo
+a[9,2]=params$Zewnatrz
+a[10,2]=params$Wewnatrz
+
+colnames(a)<-NULL
+kable(a, format = "latex")
+```
+
+2. Wynajmujący oddaje w najem pojazd na okres: 
+```{r, echo=FALSE, warning=FALSE, tidy=TRUE}
+library(kableExtra)
+library(knitr)
+g<-data.frame(nazwa=1, wartosc=2)
+g[1,1]="Od dnia"
+g[2,1]="Godzina"
+g[3,1]="Do dnia"
+g[4,1]="Godzina"
+
+
+g[1,2]=params$DataOd
+g[2,2]=params$GodzinaOdDod
+g[3,2]=params$DataDo
+g[4,2]=params$GodzinaDoDod
+
+
+
+colnames(g)<-NULL
+kable(g, format = "latex")
+```
+3. Najemca zobowiązuje się do używania przedmiotu najmu zgodnie z jego przeznaczeniem i zasadami użytkowania zawartymi w szczegółowych warunkach najmu pojazdu.
+
+4. Przedmiot najmu nie może być bez pisemnej zgody wynajmującego używane przez osoby inne niż najemca, oddany w podnajem lub użyczany. 
+
+5. Najemca oświadcza, że pojazd będzie używany na terenie Polski oraz **`r params$Zagranica`**
+na co wynajmujący wyraża zgodę. 
+6. Wydanie pojazdu nastąpi w ul. Krakowska 1, 99-098 Łódź
+7. a zwrot po upływie najmu w ul. Krakowska 1, 99-098 Łódź <br />   
+* Wraz z: **`r params$Przekazano`**
+
+* W samochodzie znajdują się:
+  + gaśnica proszkowa
+  + trójkąt ostrzegawczy w opakowaniu
+  + podnośnik samochodowy
+  + klucz do kół
+  + kamizelka odblaskowa szt. ....
+  + koło zapasowe
+8. Wynajmujący oświadcza, że pojazd będący przedmiotem najmu jest ubezpieczony w zakresie OC, posiada ważny przegląd techniczny, jest sprawny technicznie i nie posiada uszkodzeń, co najemca sprawdził podpisująć umowę. 
+
+9. Opłaty za wynajem pojazdu: za **`r params$Cena1` `r params$JednCzasu` `r params$Cena2`** zł.
+  + limit kilometrów **`r params$Limit1`** na **`r params$Limit2`**
+  + za każdy kilometr powyżej limitu dobowego opłata 30 groszy brutto.
+  
+10. Najemca wpłaca kaucję w wysokości **`r params$Kaucja`**, która podlega zwrotowi na warunkach okreslonych w paragrafie 6 szczegółowych warunków najmu pojazdu. 
+11. Najemca przyjmuje pełną odpowiedzialność materialną za szkody zaistniałe z jego winy, a nie znajdujące pokrycia przez zakład ubezpieczeń, w tym szkody obejmujące utratę korzyści za każdy dzień wyłączenia pojazdu z eksploatacji. 
+12. Wszelkie zmiany umowy wymagają dla swojej ważności formy pisemnej.
+13. Najemca potwierdza, że przed podpisaniem umowy zapoznał się z jej treścią, jak i z treścią warunków szczegółowych najmu pojazdu. 
+14. W sprawach nieuregulowanych niniejszą umową oraz szczegółowymi warunkami najmu pojazdu zastosowane będa przepisy Kodeksu Cywilnego.
+15. Umowę sporządzono w dwóch jednobrzmiących egzemplarzach, po jednej dla każdej ze stron. 
+16. Najemca zgodnie z warunkami najmu bierze całą odpowiedzialność za samochód w związku z czym jest odpowiedzialny za szkody wyrządzone przez osoby upoważnione przez niego do kierowania pojazdem. 
+
+&nbsp;  
+Wynajmujący \hfill Najemca
+
+&nbsp;  
+
+UWAGI: 
+&nbsp;  
+&nbsp;  
+
+Zwrot pojazdu:
